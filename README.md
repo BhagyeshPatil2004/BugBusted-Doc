@@ -1,17 +1,17 @@
-# 🐛 BugBuster
+# 🐛 BugBusted
 
 <div align="center">
 
 **Privacy-First CLI Security Scanner — Powered by Local AI**
 
-![npm](https://img.shields.io/badge/npm-i%20-g%20bugbuster-CC3534?style=for-the-badge&logo=npm&logoColor=white)
+![npm](https://img.shields.io/badge/npm-i%20-g%20bugbusted-CC3534?style=for-the-badge&logo=npm&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Privacy](https://img.shields.io/badge/Data%20Egress-Zero-brightgreen?style=for-the-badge&logo=shield&logoColor=white)
-![Ollama](https://img.shields.io/badge/AI-Ollama%20Local-FF6B35?style=for-the-badge&logoColor=white)
+![Ollama](https://img.shields.io/badge/AI-Ollama%20Local-FF6B35?style=for-the-badge&logo=llama&logoColor=white)
 ![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)
 
-*Find leaked secrets. Fix misconfigs. Stay private.*
+*Find leaked secrets. Detect misconfigurations. Stay private.*
 
 </div>
 
@@ -20,16 +20,16 @@
 ## ⚡ Quick Install
 
 ```bash
-npm install -g bugbuster
+npm install -g bugbusted
 ```
 
 Then launch:
 
 ```bash
-bugbuster
+bugbusted
 ```
 
-That's it. No config. No API keys. No cloud setup.
+That's it! No complex configurations. No API keys. No cloud setup required.
 
 ---
 
@@ -47,72 +47,70 @@ node --version
 # Should show v18.0.0 or higher
 ```
 
-Don't have Node.js? Download at [nodejs.org](https://nodejs.org) → choose LTS version.
+Don't have Node.js? Download the LTS version at [nodejs.org](https://nodejs.org).
 
 ---
 
 ## 🚀 Getting Started
 
-### Step 1 — Install BugBuster
+### Step 1 — Install BugBusted
 
 ```bash
-npm install -g bugbuster
+npm install -g bugbusted
 ```
 
 ### Step 2 — Launch
 
 ```bash
-bugbuster
+bugbusted
 ```
 
-You'll see the BugBuster REPL:
+You'll see the BugBusted interactive workspace:
 
 ```
-  🆓 BugBuster Free Tier
-  /scan (5/day) | /audit (3/day) | /help
-  Upgrade → bugbuster.dev
+  🆓 BugBusted Free Tier
+  /scan (unlimited) | /help
+  Upgrade → bugbusted.dev
 
 ~ /
 ```
 
-### Step 3 — Scan Your First File
+### Step 3 — Scan a File or Directory
+
+To scan, type `/scan` followed by the path to a file or folder:
 
 ```bash
 /scan .env
 ```
 
-BugBuster finds leaked secrets, misconfigs, and security issues instantly.
+> 💡 **Tip:** You can also type a path directly (e.g., `./config.json` or `.`) without any command to scan it instantly.
 
 ---
 
 ## 🤖 Optional — Enable AI Features
 
-AI features use [Ollama](https://ollama.com) running locally.
-**Your code never leaves your computer.**
+AI-powered risk explanations use [Ollama](https://ollama.com) running locally on your machine.
+**Your secrets and code never leave your computer.**
 
-### Install Ollama
+### 1. Install Ollama
 
-**Mac:**
-```bash
-brew install ollama
-```
+* **macOS**: `brew install ollama` or download the installer from [ollama.com](https://ollama.com).
+* **Windows / Linux**: Download the installer from [ollama.com](https://ollama.com) and run it.
 
-**Windows / Linux:**
-Download from [ollama.com](https://ollama.com) → follow installer
-
-### Pull AI Model
+### 2. Pull the AI Model
 
 ```bash
 ollama pull gemma2
 ```
 
-### Start Ollama
+### 3. Start Ollama
 
+Ensure the Ollama service is running:
 ```bash
 ollama serve
 ```
 
-BugBuster auto-detects Ollama on startup. If Ollama is offline, BugBuster uses a fast rule-based fallback — still works great without it.
+BugBusted auto-detects Ollama on startup. If Ollama is offline, BugBusted gracefully uses a fast, rule-based local fallback — so it still works great offline.
 
 ---
 
@@ -122,32 +120,28 @@ BugBuster auto-detects Ollama on startup. If Ollama is offline, BugBuster uses a
 
 | Command | What it does |
 |---------|-------------|
-| `/scan [path]` | Scan file or folder for secrets and misconfigs (5/day) |
-| `/audit [path]` | Silent health check with summary score (3/day) |
+| `/scan [path]` | Scan files or folders for secrets, misconfigurations, and gitignore gaps (unlimited) |
 | `/help` | Show all available commands |
-| `/pwd` | Show current directory |
+| `/pwd` | Show the current working directory |
 | `/cd <path>` | Change directory |
-| `/back` | Go up one directory |
-| `/clear` | Clear the screen |
-| `/exit` | Exit BugBuster |
+| `/back` | Navigate up to the parent directory |
+| `/clear` | Clear the terminal screen |
+| `/exit` | Exit BugBusted |
 
-### 🔒 Pro — Requires License Key
+### 🔒 Pro Tier — Requires License Key
 
 | Command | What it does |
 |---------|-------------|
-| `/explain <file>` | AI explains security risks in plain English |
-| `/fix <file>` | AI suggests how to fix each issue |
-| `/apply` | Apply AI fix directly to your file |
-| `/check [key]` | Find mismatched keys across all config files |
-| `/search <value>` | Search for any value across all configs |
-| `/export <file>` | Export scan report as JSON or HTML |
-| `/diff <f1> <f2>` | Compare two config files side by side |
-| `/hook ins\|rem` | Add/remove Git pre-commit security check |
-| `/templates` | Browse and use secure config templates |
-| `/ignore <pattern>` | Add suppression rule to .bugbusterignore |
-| `/init` | Generate .env.example from your .env |
-
-> 💡 **Tip:** Type a file path directly (e.g. `./config.yaml`) to scan it instantly without a command.
+| `/explain <file>` | Local AI explains security risks and exploit potential in plain English |
+| `/check [key]` | Check for consistency/mismatched values of a key across all config files |
+| `/search <value>` | Globally search for any key or value across all configurations |
+| `/export <file>` | Export scan report as a `.json` or `.html` file |
+| `/diff <f1> <f2>` | Compare two configuration files side-by-side |
+| `/hook [ins\|rem]` | Install or remove automated Git pre-commit security gates |
+| `/templates` | Browse and load secure, production-ready config templates |
+| `/ignore <pattern>` | Add suppression rules to `.bugbustedignore` |
+| `/init` | Generate a clean `.env.example` template from your `.env` |
+| **`/model [name]`** | View or switch active local Ollama models |
 
 ---
 
@@ -156,34 +150,36 @@ BugBuster auto-detects Ollama on startup. If Ollama is offline, BugBuster uses a
 ### Step 1 — Get your Machine ID
 
 ```bash
-bugbuster --machine-id
+bugbusted --machine-id
 # Output: Your Machine ID: a1b2c3d4e5f6g7h8
 ```
 
-### Step 2 — Purchase License
+### Step 2 — Obtain a Key
 
-Go to [bugbuster.dev/pricing](https://bugbuster.dev/pricing)
-Send your Machine ID to **bhagyeshpatil88@gmail.com** after purchase.
+Go to [bugbusted.dev](https://bugbusted.dev) and submit your Machine ID. Alternatively, email your Machine ID to **bhagyeshpatil2004@gmail.com** or **bhagyeshpatil88@gmail.com**.
 
 ### Step 3 — Activate
 
 ```bash
-bugbuster --activate BB-yourkey
+bugbusted --activate BB-yourkey.signature
 ```
 
 You'll see:
 ```
-✅ BugBuster Pro activated!
-   Licensed to: your@email.com
-   Valid until: 1 June 2027
+✅ BugBusted Pro activated!
+   Licensed to : your@email.com
+   Valid until : 1 June 2027
+   Machine ID  : a1b2c3d4e5f6g7h8
    All commands unlocked 🐛
 ```
 
-### Check License Status Anytime
-
+Check your license status anytime by running:
 ```bash
-bugbuster --license
+bugbusted --license
 ```
+
+> [!WARNING]
+> **Machine & OS Binding:** Licenses are bound to your machine hardware configuration and OS. A key generated for Windows will not work on macOS or Linux. Contact support if you need to transfer your license.
 
 ---
 
@@ -197,112 +193,87 @@ bugbuster --license
 
 ---
 
-## 🔍 What BugBuster Detects
+## 🔍 What BugBusted Detects
 
 | Issue | Examples |
 |-------|---------|
-| **Leaked API Keys** | AWS, Stripe, GitHub, Google, OpenAI |
-| **Hardcoded Passwords** | Plain text passwords in config files |
-| **High Entropy Strings** | Random strings likely to be secrets |
-| **Misconfigurations** | Wrong URLs, duplicate keys, type errors |
-| **Gitignore Gaps** | Sensitive files not in .gitignore |
-| **Cross-file Conflicts** | Same key, different values across files |
+| **Leaked API Keys** | AWS, Stripe, GitHub, Google, OpenAI, Slack |
+| **Hardcoded Passwords** | Plain text credentials in configuration blocks |
+| **High Entropy Strings** | Random strings likely to be database credentials or secret tokens |
+| **Misconfigurations** | Invalid formats, duplicate keys, type errors, invalid URLs |
+| **Gitignore Gaps** | Flagging unignored files that contain secrets |
+| **Cross-file Conflicts** | Mismatched values for the same key across config layers |
 
 ---
 
-## 📊 Performance
+## 🆚 How BugBusted Compares
 
-| Metric | Result |
-|--------|--------|
-| Config formats supported | 10 |
-| Detection precision | 93.4% |
-| Detection recall | 91.2% |
-| AI response time | ~9.2 seconds |
-| Offline fallback | < 100ms |
-| Data sent to cloud | **0 bytes** |
-
----
-
-## 🆚 How BugBuster Compares
-
-| Feature | Gitleaks | TruffleHog | Snyk | BugBuster |
-|---------|:--------:|:----------:|:----:|:---------:|
-| Multi-format parsing | ❌ | ❌ | Partial | ✅ |
+| Feature | Gitleaks | TruffleHog | Snyk | **BugBusted** |
+|---------|:--------:|:----------:|:----:|:-------------:|
+| Multi-format parsing | ❌ | ❌ | Partial | ✅ (10 formats) |
 | Local AI explanation | ❌ | ❌ | ❌ | ✅ |
-| Interactive REPL | ❌ | ❌ | ❌ | ✅ |
-| Fix generation + apply | ❌ | ❌ | Partial | ✅ |
+| Interactive REPL | ❌ | ❌ | ❌ | ✅ (17 commands) |
 | Gitignore gap check | ❌ | ❌ | ❌ | ✅ |
-| Zero data egress | ✅ | ✅ | ❌ | ✅ |
-| Works 100% offline | ✅ | ✅ | ❌ | ✅ |
+| Git pre-commit hook | ✅ | ❌ | ✅ | ✅ |
+| **Zero data egress** | ✅ | ✅ | ❌ | ✅ |
+| **Works 100% offline** | ✅ | ✅ | ❌ | ✅ |
 
 ---
-
 
 ## ❓ Troubleshooting
 
-**"command not found: bugbuster"**
+**"command not found: bugbusted"**
 ```bash
-# Try:
-npx bugbuster
+# Try running with npx:
+npx bugbusted
 
-# Or reinstall:
-npm install -g bugbuster
+# Or reinstall globally:
+npm install -g bugbusted
 ```
 
 **"Ollama not detected"**
 ```bash
 # Start Ollama first:
 ollama serve
-# BugBuster still works without it using smart fallback
+# Note: BugBusted will still function using rule-based local explanations if Ollama is offline.
 ```
 
 **"License key invalid"**
 ```bash
-# Get your machine ID:
-bugbuster --machine-id
-# Email it to: bhagyeshpatil88@gmail.com
-# We fix same day ✅
-```
-
-**Node version too old**
-```bash
-node --version
-# Need v18+? Download at nodejs.org
+# Ensure your active machine ID matches:
+bugbusted --machine-id
+# Send it to: bhagyeshpatil2004@gmail.com
 ```
 
 ---
 
 ## 🔒 Privacy Guarantee
 
-- ✅ All scanning runs on your machine
-- ✅ AI runs locally via Ollama (localhost only)
-- ✅ Zero data sent to any server ever
-- ✅ Your secrets never leave your computer
-- ✅ Works 100% offline after install
+- ✅ All scanning and format checks run locally on your CPU.
+- ✅ AI explanations run locally via Ollama (`localhost:11434` only).
+- ✅ Zero telemetry and zero data egress to external servers.
+- ✅ Works 100% offline.
 
 ---
 
 ## 📄 License
 
 ```
-BugBuster Proprietary License
+BugBusted Proprietary License
 Copyright (c) 2026 Bhagyesh Patil. All rights reserved.
 
-This documentation is provided for informational purposes only.
-
-The BugBuster software is proprietary. You may:
-  ✅ Install and use BugBuster via npm
+The BugBusted software CLI package is proprietary. You may:
+  ✅ Install and use BugBusted via npm
   ✅ Use the free tier at no cost
   ✅ Purchase a Pro license for full access
 
 You may NOT:
   ❌ Copy, modify or distribute the software
-  ❌ Reverse engineer or decompile BugBuster
-  ❌ Resell or sublicense BugBuster
+  ❌ Reverse engineer or decompile BugBusted
+  ❌ Resell or sublicense BugBusted
   ❌ Share license keys with others
 
-For licensing inquiries:
-bhagyeshpatil88@gmail.com
+For licensing inquiries contact: bhagyeshpatil2004@gmail.com
 ```
 
 ---
@@ -310,6 +281,5 @@ bhagyeshpatil88@gmail.com
 <div align="center">
 
 Built with 🐛 by [Bhagyesh Patil](https://linkedin.com/in/bhagyeshpatil2004)
-
 
 </div>
