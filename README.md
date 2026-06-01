@@ -13,8 +13,6 @@
 
 *Find leaked secrets. Fix misconfigs. Stay private.*
 
-[Website](https://bugbuster.dev) · [Buy Pro — $29](https://bugbuster.dev/pricing) · [Report a Bug](mailto:bhagyeshpatil88@gmail.com)
-
 </div>
 
 ---
@@ -239,17 +237,6 @@ bugbuster --license
 
 ---
 
-## 💰 Pricing
-
-| Plan | Price | What you get |
-|------|-------|-------------|
-| **Free** | $0 forever | /scan (5/day), /audit (3/day), /help |
-| **Lifetime** | $29 once | All commands, 2 machines |
-| **Updates** | $9/year | New commands, parsers, features |
-
-Team plans available at [bugbuster.dev/pricing](https://bugbuster.dev/pricing)
-
----
 
 ## ❓ Troubleshooting
 
@@ -324,6 +311,5 @@ bhagyeshpatil88@gmail.com
 
 Built with 🐛 by [Bhagyesh Patil](https://linkedin.com/in/bhagyeshpatil2004)
 
-[bugbuster.dev](https://bugbuster.dev) · [bhagyeshpatil88@gmail.com](mailto:bhagyeshpatil88@gmail.com) · [LinkedIn](https://linkedin.com/in/bhagyeshpatil2004)
 
 </div>
